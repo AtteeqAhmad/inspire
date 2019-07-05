@@ -11,18 +11,31 @@
 
 <body id="bg-image">
 	<div id="weather">
-		Your Weather Template
-	</div>
+		Weather Template
+		<p>Celsius: <span id="outputCelsius"></span></p>
 
-	<div id="quote">
+	</div>
+	<div class="col">
 		The Quote
+		<div class="row" id="quote">
+		</div>
 	</div>
 
-	<div>
-		A Todo List
-		<div id="todo-error"></div>
-		<form onsubmit=""></form>
-		<div id="todos"></div>
+
+	<div class="container">
+		<h3> To Do List </h3>
+		<form onsubmit="app.controllers.todoController.addtodo(event)">
+			<input type="text" name="Todo" id="todos" placeholder="I will.....">
+			<button type="submit" class="btn btn-primary"> Add </button>
+		</form>
+		<ul id="mylist">
+
+
+		</ul>
+		<div id="todo-delete">
+			<button type="btn btn-primary"> Delete
+			</button>
+		</div>
 	</div>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
@@ -30,4 +43,5 @@
 </body>
 
 </html>
-<html>
+
+</html>
