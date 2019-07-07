@@ -12,15 +12,12 @@ export default class Weather {
     console.log('[RAW WEATHER API DATA]', data);
   }
   get Template() {
-    let Weather = this.data
     return `
     <h2>City - ${this.city}</h2> 
     <h3>Temp - ${this.kelvin} °C</h3>
     <h3>Temp - ${this.kelvin = [(((this.kelvin - 273.15) * 1.8) + 32).toFixed(2)]} ℉</h3>
     <h4>Wind - ${this.wind} Mph </h4>
     <h4>Desc - ${this.description}</h4>
-
-
     `
   }
 

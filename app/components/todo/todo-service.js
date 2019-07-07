@@ -43,12 +43,11 @@ export default class TodoService {
 		// .catch(err => _setState('error', err.response.data))
 	}
 
-	addTodo(todo) {
+	addTodo(Todo) {
 		todoApi.post('', newTodo)
 			.then(res => {
 				let serverTodo = res.data.data
 				let todos = new Todo(serverTodo)
-				let todos = this.Todos
 				setState('todos', todos)
 				console.log("addlist is working", res.data)
 				this.getTodos('#todos')

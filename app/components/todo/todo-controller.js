@@ -22,7 +22,7 @@ function _drawTodos() {
 
 export default class TodoController {
 	constructor() {
-		console.log("car controller works")
+		console.log("todo controller works")
 		// _todoService.addSubscriber('error', _drawError)
 		_todoService.addSubscriber('todos', _drawTodos)
 		_todoService.getTodos()
