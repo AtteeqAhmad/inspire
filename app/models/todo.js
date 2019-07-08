@@ -11,8 +11,9 @@ export default class Todo {
 
       get Template() {
             return `
-            
-            <button onclick="app.controllers.todoController.add(${this._id})"> Add </button>
+
+            <button onclick="app.controllers.todoController.addtodo(${this._id})"> Add </button>
+            <button onclick="app.controllers.todoController.add(${this._id})"> Remove </button>
       `
       }
 }
