@@ -49,9 +49,9 @@ export default class TodoController {
 		_todoService.toggleTodoStatus(todoId)
 	}
 
-	removeTodo(todoId) {
+	removeTodo(_id) {
 		// ask the service to run the remove todo with this id
-		_todoService.removeTodo(todoId)
+		_todoService.removeTodo(_id)
 	}
 
 

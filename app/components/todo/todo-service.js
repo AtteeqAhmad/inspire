@@ -70,7 +70,7 @@ export default class TodoService {
 	removeTodo(_id) {
 		todoApi.delete('', _id)
 			.then(res => {
-				this.getTodos()
+				this.getTodos(_id)
 				console.log(res.data.data)
 			})
 			.catch(err => _setState('error', err.response.data))

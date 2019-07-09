@@ -8,15 +8,18 @@ const _quoteApi = axios.create({
 });
 
 let _state = {
+	quote: [],
 	// TODO add the property that you'll want to save the value of here
 }
 
-let _subscriber = {
+let _subscribers = {
+	quote: [],
 	// TODO add the property that you'll want to save the value of here
 }
 
 function _setState(prop, data) {
 	_state[prop] = data
+	_subscribers[prop].forEach(fn => fn());
 	//_subscriber[prop].forEach(fn => fn()); //NOTE uncomment this once above TODO in the subscriber is complete
 }
 
@@ -27,13 +30,14 @@ export default class QuoteService {
 	}
 
 	addSubscriber(prop, fn) {
-		// _subscriber[prop].push(fn) NOTE uncomment this once above TODO in the subscriber is complete
+		_subscribers[prop].push(fn)
 	}
 
 	getQuote() {
-		console.log('quote')
 		_quoteApi.get().then(res => {
-			_setState('quote', new Quote(res.data))
+			let newQuote = new Quote(res.data)
+			_setState('quote', newQuote)
+			console.log('quote')
 		})
 	}
 }

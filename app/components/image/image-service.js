@@ -6,12 +6,12 @@ const imgApi = axios.create({
 
 
 let _state = {
+	image: {},
 
 }
 
 let _subscriber = {
-
-
+	image: {},
 }
 
 function _setState(prop, data) {
@@ -30,9 +30,9 @@ export default class ImageService {
 
 	}
 	getimage() {
-		console.log('calling image')
 		_imageApi.get().then(res => {
-			_setState('image', new Data(res.data))
+			_setState('image', new Image(res.data))
+			console.log('calling image')
 		})
 	}
 }
