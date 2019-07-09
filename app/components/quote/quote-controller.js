@@ -11,7 +11,7 @@ function drawQuote() {
 
 export default class QuoteController {
       constructor() {
-            _qs.addSubscribers('quote', drawQuote)
+            _qs.addSubscriber('quote', drawQuote) //NOTE every method invokation needs to call to a function/method thats defined/exists
             _qs.getQuote()
       }
 

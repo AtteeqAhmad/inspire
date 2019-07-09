@@ -3,7 +3,7 @@ import TodoService from "./todo-service.js";
 const _todoService = new TodoService()
 
 function _drawTodos() {
-	let todosElem = document.querySelector('#todos')
+	let todosElem = document.querySelector('#todo')
 	let template = ''
 	let todos = _todoService.Todos
 	todos.forEach(t => {
@@ -13,6 +13,8 @@ function _drawTodos() {
 	console.log("Todo works:", todos)
 	//WHAT IS MY PURPOSE?
 }
+
+
 
 //function _drawError() {
 //	console.error('[TODO ERROR]', _todoService.TodoError)
@@ -26,7 +28,6 @@ export default class TodoController {
 		// _todoService.addSubscriber('error', _drawError)
 		_todoService.addSubscriber('todos', _drawTodos)
 		_todoService.getTodos()
-
 		// Don't forget to add your subscriber
 	}
 
@@ -36,7 +37,10 @@ export default class TodoController {
 		var todo = {
 			description: form.description.value
 			// DONT FORGET TO BUILD YOUR TODO OBJECT
+
 		}
+		form.reset()
+
 		_todoService.addTodo(todo)
 	}
 
