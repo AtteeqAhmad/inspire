@@ -13,7 +13,7 @@ function drawImage() {
 export default class ImageController {
       constructor() {
             _imageService.addsubscriber('image', drawImage)
-            _imageService.getImage()
+            _imageService.Image
       }
 
 }

@@ -11,7 +11,7 @@ let _state = {
 }
 
 let _subscriber = {
-	image: {},
+	image: [],
 }
 
 function _setState(prop, data) {
@@ -20,7 +20,7 @@ function _setState(prop, data) {
 
 }
 export default class ImageService {
-	get image() {
+	get Image() {
 		return _state.imageService
 
 	}
